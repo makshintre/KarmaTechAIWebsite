@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AboutUs } from './AboutUs';
+import companyLogo from '../assets/company_logo.jpg';
 import {
     ChevronDown,
     ArrowRight,
@@ -137,9 +138,11 @@ const Website = () => {
                     <div className="flex justify-between items-center h-20">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
-                            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                                YourLogo
-                            </span>
+                            <img 
+                                src={companyLogo} 
+                                alt="Company Logo" 
+                                className="h-12 w-auto object-contain"
+                            />
                         </div>
 
                         {/* Desktop Navigation */}
