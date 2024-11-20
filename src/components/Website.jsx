@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { AboutUs } from './AboutUs';
 import companyLogo from '../assets/company_logo.jpg';
+import stressedImage from '../assets/stressed.png';
+import napkinImage2 from '../assets/napkin-image 2.png';
+import napkinImage3 from '../assets/napkin-image 3.png';
+
 import {
     ChevronDown,
     ArrowRight,
@@ -253,15 +257,15 @@ const Website = () => {
                                     Custom Software Solutions
                                 </h2>
                             </div>
-                            
+
                             {/* Main Value Proposition */}
                             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                                Your Application. Your Control.
+                                Your Application. Your Control. Made Possible with KarmaTech
                             </p>
-                            
+
                             {/* Descriptive Subtext */}
                             <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-                                We transform your business processes with AI-powered custom software solutions, 
+                                We transform your business processes with AI-powered custom software solutions,
                                 giving you complete ownership and control of your digital future.
                             </p>
 
@@ -298,7 +302,25 @@ const Website = () => {
                     <div className="absolute inset-0 bg-grid-white/[0.02] -z-10"></div>
                 </section>
 
-                {/* Rest of the content remains the same */}
+                {/* Human vs AI comparison */}
+                <div className='w-full flex flex-row justify-center items-center space-x-4 py-8'>
+                    <img
+                        src={stressedImage}
+                        alt="Stressed Image"
+                        className="w-1/4 h-auto object-contain"
+                    />
+                    <img
+                        src={napkinImage2}
+                        alt="Napkin Image 2"
+                        className="w-1/4 h-auto object-contain"
+                    />
+                    <img
+                        src={napkinImage3}
+                        alt="Napkin Image 3"
+                        className="w-1/4 h-auto object-contain"
+                    />
+                </div>
+
                 {/* Our Approach */}
                 <section className="w-full py-20 bg-white">
                     <div className="w-full px-4">
@@ -443,6 +465,8 @@ const Website = () => {
                     </div>
                 </section>
             </div>
+
+            {/* Rest of the code remains the same */}
         </div>
     );
 };
