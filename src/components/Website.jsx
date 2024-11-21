@@ -3,7 +3,8 @@ import { AboutUs } from './AboutUs';
 import companyLogo from '../assets/company_logo.jpg';
 import stressedImage from '../assets/stressed.png';
 import napkinImage2 from '../assets/napkin-image 2.png';
-import napkinImage3 from '../assets/napkin-image 3.png';
+// import napkinImage3 from '../assets/napkin-image 3.png';
+import napkinImage5 from '../assets/napkin-image 5.png';
 
 import {
     ChevronDown,
@@ -155,14 +156,14 @@ const Website = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-black text-white">
             {/* About Us Modal remains the same */}
             {showAboutUsModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
+                    <div className="bg-gray-900 rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
                         <button
                             onClick={() => setShowAboutUsModal(false)}
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                            className="absolute top-4 right-4 text-gray-300 hover:text-white"
                         >
                             <X className="w-6 h-6" />
                         </button>
@@ -243,7 +244,7 @@ const Website = () => {
             {/* Main Content */}
             <div className="pt-20 w-full">
                 {/* Hero Section */}
-                <section className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-24 pb-20">
+                <section className="bg-black pt-24 pb-20">
                     <div className="max-w-6xl mx-auto px-4">
                         <div className="text-center">
                             {/* Company Name and Headline */}
@@ -297,83 +298,86 @@ const Website = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Optional: Subtle Pattern Overlay */}
-                    <div className="absolute inset-0 bg-grid-white/[0.02] -z-10"></div>
                 </section>
 
-                {/* Human vs AI comparison */}
-                <div className='w-full flex flex-row justify-center items-center space-x-4 py-8'>
+                {/* Remaining sections with black background and adjusted text colors */}
+                <div className='w-full flex flex-row justify-center items-center space-x-4 py-8 bg-black'>
                     <img
                         src={stressedImage}
                         alt="Stressed Image"
-                        className="w-1/4 h-auto object-contain"
+                        className="w-1/4 object-contain"
                     />
                     <img
                         src={napkinImage2}
                         alt="Napkin Image 2"
-                        className="w-1/4 h-auto object-contain"
+                        className="w-1/4 object-contain"
                     />
-                    <img
+                    {/* <img
                         src={napkinImage3}
                         alt="Napkin Image 3"
-                        className="w-1/4 h-auto object-contain"
+                        className="w-[400px] h-[300px] object-contain"
+                    /> */}
+                    <img
+                        src={napkinImage5}
+                        alt="Napkin Image 5"
+                        className="w-[400px] h-[450px] object-contain"
                     />
                 </div>
 
                 {/* Our Approach */}
-                <section className="w-full py-20 bg-white">
+                <section className="w-full py-20 bg-black">
                     <div className="w-full px-4">
-                        <h2 className="text-3xl font-bold text-center mb-16">Our Approach</h2>
+                        <h2 className="text-3xl font-bold text-center mb-16 text-white">Our Approach</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-                            <div className="text-center p-8 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
-                                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <BarChart className="w-8 h-8 text-blue-600" />
+                            {/* Approach cards with black background and white/gray text */}
+                            <div className="text-center p-8 rounded-xl bg-gray-900 hover:bg-gray-800 transition-colors">
+                                <div className="bg-gray-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <BarChart className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4">Gap Analysis</h3>
-                                <p className="text-gray-600">We analyze your current systems and identify exactly what you need</p>
+                                <h3 className="text-xl font-semibold mb-4 text-white">Gap Analysis</h3>
+                                <p className="text-gray-400">We analyze your current systems and identify exactly what you need</p>
                             </div>
-                            <div className="text-center p-8 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
-                                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Settings className="w-8 h-8 text-blue-600" />
+                            <div className="text-center p-8 rounded-xl bg-gray-900 hover:bg-gray-800 transition-colors">
+                                <div className="bg-gray-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <Settings className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4">Custom Solution Design</h3>
-                                <p className="text-gray-600">Like a master tailor, we create solutions that fit perfectly</p>
+                                <h3 className="text-xl font-semibold mb-4 text-white">Custom Solution Design</h3>
+                                <p className="text-gray-400">Like a master tailor, we create solutions that fit perfectly</p>
                             </div>
-                            <div className="text-center p-8 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
-                                <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <CheckCircle className="w-8 h-8 text-blue-600" />
+                            <div className="text-center p-8 rounded-xl bg-gray-900 hover:bg-gray-800 transition-colors">
+                                <div className="bg-gray-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <CheckCircle className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-4">Implementation</h3>
-                                <p className="text-gray-600">Seamless integration with your existing systems</p>
+                                <h3 className="text-xl font-semibold mb-4 text-white">Implementation</h3>
+                                <p className="text-gray-400">Seamless integration with your existing systems</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Services */}
-                <section className="w-full py-20 bg-gray-50">
+                <section className="w-full py-20 bg-black">
                     <div className="w-full px-4">
-                        <h2 className="text-3xl font-bold text-center mb-16">Our Services</h2>
+                        <h2 className="text-3xl font-bold text-center mb-16 text-white">Our Services</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
                             {services.map((service, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                                    className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-colors cursor-pointer"
                                     onClick={() => setActiveService(activeService === index ? null : index)}
                                 >
                                     <div className="flex items-center mb-4">
-                                        <div className="bg-blue-50 p-3 rounded-lg mr-4">
-                                            {service.icon}
+                                        <div className="bg-gray-800 p-3 rounded-lg mr-4">
+                                            <div className="text-white">{service.icon}</div>
                                         </div>
-                                        <h3 className="text-xl font-semibold">{service.title}</h3>
+                                        <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                                     </div>
-                                    <p className="text-gray-600 mb-4">{service.description}</p>
+                                    <p className="text-gray-400 mb-4">{service.description}</p>
                                     {activeService === index && (
                                         <ul className="space-y-2">
                                             {service.features.map((feature, idx) => (
-                                                <li key={idx} className="flex items-center text-gray-600">
-                                                    <CheckCircle className="w-4 h-4 mr-2 text-blue-600" />
+                                                <li key={idx} className="flex items-center text-gray-400">
+                                                    <CheckCircle className="w-4 h-4 mr-2 text-white" />
                                                     {feature}
                                                 </li>
                                             ))}
@@ -386,19 +390,19 @@ const Website = () => {
                 </section>
 
                 {/* Industries */}
-                <section className="w-full py-20 bg-white">
+                <section className="w-full py-20 bg-black">
                     <div className="w-full px-4">
-                        <h2 className="text-3xl font-bold text-center mb-16">Industries We Serve</h2>
+                        <h2 className="text-3xl font-bold text-center mb-16 text-white">Industries We Serve</h2>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 px-4">
                             {industries.map((industry, index) => (
-                                <div key={index} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:bg-blue-50 group">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
-                                        <div className="text-blue-600">
+                                <div key={index} className="flex flex-col items-center p-6 bg-gray-900 rounded-xl hover:bg-gray-800 transition-all duration-300 group">
+                                    <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
+                                        <div className="text-white">
                                             {industry.icon}
                                         </div>
                                     </div>
-                                    <h3 className="font-semibold text-center mb-2">{industry.title}</h3>
-                                    <p className="text-sm text-gray-600 text-center">{industry.description}</p>
+                                    <h3 className="font-semibold text-center mb-2 text-white">{industry.title}</h3>
+                                    <p className="text-sm text-gray-400 text-center">{industry.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -406,58 +410,58 @@ const Website = () => {
                 </section>
 
                 {/* Case Studies */}
-                <section className="w-full py-20 bg-gray-50">
+                <section className="w-full py-20 bg-black">
                     <div className="w-full px-4">
-                        <h2 className="text-3xl font-bold text-center mb-16">Success Stories</h2>
+                        <h2 className="text-3xl font-bold text-center mb-16 text-white">Success Stories</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                <h3 className="text-xl font-semibold mb-4">Manufacturing Efficiency</h3>
+                            <div className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-shadow">
+                                <h3 className="text-xl font-semibold mb-4 text-white">Manufacturing Efficiency</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Challenge:</p>
-                                        <p className="text-gray-700">Manual quality control causing delays</p>
+                                        <p className="text-gray-300">Manual quality control causing delays</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Solution:</p>
-                                        <p className="text-gray-700">Automated AI-powered inspection system</p>
+                                        <p className="text-gray-300">Automated AI-powered inspection system</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Results:</p>
-                                        <p className="text-gray-700">75% faster processing, 90% fewer errors</p>
+                                        <p className="text-gray-300">75% faster processing, 90% fewer errors</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                <h3 className="text-xl font-semibold mb-4">Healthcare Optimization</h3>
+                            <div className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-shadow">
+                                <h3 className="text-xl font-semibold mb-4 text-white">Healthcare Optimization</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Challenge:</p>
-                                        <p className="text-gray-700">Complex patient scheduling system</p>
+                                        <p className="text-gray-300">Complex patient scheduling system</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Solution:</p>
-                                        <p className="text-gray-700">Custom scheduling automation</p>
+                                        <p className="text-gray-300">Custom scheduling automation</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Results:</p>
-                                        <p className="text-gray-700">60% reduction in wait times</p>
+                                        <p className="text-gray-300">60% reduction in wait times</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                <h3 className="text-xl font-semibold mb-4">Financial Services</h3>
+                            <div className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-shadow">
+                                <h3 className="text-xl font-semibold mb-4 text-white">Financial Services</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Challenge:</p>
-                                        <p className="text-gray-700">Slow document processing</p>
+                                        <p className="text-gray-300">Slow document processing</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Solution:</p>
-                                        <p className="text-gray-700">Intelligent document automation</p>
+                                        <p className="text-gray-300">Intelligent document automation</p>
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-500">Results:</p>
-                                        <p className="text-gray-700">85% faster processing time</p>
+                                        <p className="text-gray-300">85% faster processing time</p>
                                     </div>
                                 </div>
                             </div>
@@ -465,8 +469,6 @@ const Website = () => {
                     </div>
                 </section>
             </div>
-
-            {/* Rest of the code remains the same */}
         </div>
     );
 };
