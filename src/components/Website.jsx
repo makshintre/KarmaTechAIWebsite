@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { AboutUs } from './AboutUs';
+import { WhyUseAI } from './WhyUseAI';
+import { Products } from './products';
+import { PartnerProgram } from './partner_program';
 import companyLogo from '../assets/company_logo.jpg';
 import stressedImage from '../assets/stressed.png';
 import napkinImage2 from '../assets/napkin-image 2.png';
-// import napkinImage3 from '../assets/napkin-image 3.png';
-import napkinImage5 from '../assets/napkin-image 5.png';
+import solution from '../assets/solution.png'
 
 import {
-    ChevronDown,
     ArrowRight,
     Code,
     Brain,
@@ -33,6 +34,9 @@ const Website = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showAboutUsModal, setShowAboutUsModal] = useState(false);
+    const [showWhyUseAIModal, setShowWhyUseAIModal] = useState(false);
+    const [showProductsModal, setShowProductsModal] = useState(false);
+    const [showPartnerProgramModal, setShowPartnerProgramModal] = useState(false);
 
     // Stats counter animation
     const [stats, setStats] = useState({
@@ -53,32 +57,14 @@ const Website = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Navigation items remain the same
+    // Updated navigation items with new order
     const navigationItems = [
-        {
-            label: 'What we do',
-            items: ['Overview', 'Industries', 'Services', 'Products and Platforms', 'Research & Innovation']
-        },
-        {
-            label: 'Who we are',
-            items: ['About Us', 'Leadership', 'Partners', 'Global Presence', 'Culture']
-        },
-        {
-            label: 'Insights',
-            items: ['Blog', 'Case Studies', 'Whitepapers', 'Reports', 'Events']
-        },
-        {
-            label: 'Careers',
-            items: ['Open Positions', 'Life at Company', 'Benefits', 'Learning & Development']
-        },
-        {
-            label: 'Newsroom',
-            items: ['Press Releases', 'Media Coverage', 'Awards', 'Company News']
-        },
-        {
-            label: 'Investors',
-            items: ['Financial Reports', 'Corporate Governance', 'Stock Information', 'IR Calendar']
-        }
+        'About Us',
+        'Products and Services',
+        'Why Use AI',
+        'Industries we serve',
+        'Partner Program',
+        'Contact Us'
     ];
 
     const services = [
@@ -157,7 +143,7 @@ const Website = () => {
 
     return (
         <div className="min-h-screen bg-black text-white">
-            {/* About Us Modal remains the same */}
+            {/* About Us Modal */}
             {showAboutUsModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
                     <div className="bg-gray-900 rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
@@ -168,6 +154,51 @@ const Website = () => {
                             <X className="w-6 h-6" />
                         </button>
                         <AboutUs />
+                    </div>
+                </div>
+            )}
+
+            {/* Why Use AI Modal */}
+            {showWhyUseAIModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-gray-900 rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
+                        <button
+                            onClick={() => setShowWhyUseAIModal(false)}
+                            className="absolute top-4 right-4 text-gray-300 hover:text-white"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <WhyUseAI />
+                    </div>
+                </div>
+            )}
+
+            {/* Products Modal */}
+            {showProductsModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-gray-900 rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
+                        <button
+                            onClick={() => setShowProductsModal(false)}
+                            className="absolute top-4 right-4 text-gray-300 hover:text-white"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <Products />
+                    </div>
+                </div>
+            )}
+
+            {/* Partner Program Modal */}
+            {showPartnerProgramModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-gray-900 rounded-lg w-full max-h-[90vh] overflow-y-auto relative mx-4">
+                        <button
+                            onClick={() => setShowPartnerProgramModal(false)}
+                            className="absolute top-4 right-4 text-gray-300 hover:text-white"
+                        >
+                            <X className="w-6 h-6" />
+                        </button>
+                        <PartnerProgram />
                     </div>
                 </div>
             )}
@@ -184,30 +215,25 @@ const Website = () => {
                             />
                         </div>
 
-                        <div className="hidden md:flex items-center space-x-1">
+                        <div className="hidden md:flex items-center space-x-4">
                             {navigationItems.map((item, index) => (
-                                <div key={index} className="relative group">
-                                    <button className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium flex items-center space-x-1">
-                                        <span>{item.label}</span>
-                                        <ChevronDown className="w-4 h-4" />
-                                    </button>
-
-                                    <div className="absolute left-0 w-48 bg-white rounded-md shadow-lg py-2 hidden group-hover:block">
-                                        {item.items.map((subItem, subIndex) => (
-                                            <button
-                                                key={subIndex}
-                                                onClick={() => {
-                                                    if (subItem === 'About Us') {
-                                                        setShowAboutUsModal(true);
-                                                    }
-                                                }}
-                                                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                            >
-                                                {subItem}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
+                                <button
+                                    key={index}
+                                    onClick={() => {
+                                        if (item === 'About Us') {
+                                            setShowAboutUsModal(true);
+                                        } else if (item === 'Why Use AI') {
+                                            setShowWhyUseAIModal(true);
+                                        } else if (item === 'Products and Services') {
+                                            setShowProductsModal(true);
+                                        } else if (item === 'Partner Program') {
+                                            setShowPartnerProgramModal(true);
+                                        }
+                                    }}
+                                    className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium"
+                                >
+                                    {item}
+                                </button>
                             ))}
                         </div>
 
@@ -225,17 +251,24 @@ const Website = () => {
                 {isMenuOpen && (
                     <div className="md:hidden bg-white border-t w-full">
                         {navigationItems.map((item, index) => (
-                            <div key={index} className="px-4 py-2">
-                                <button
-                                    className="flex items-center justify-between w-full text-gray-600"
-                                    onClick={() => {
-                                        // Handle mobile navigation
-                                    }}
-                                >
-                                    <span>{item.label}</span>
-                                    <ChevronDown className="w-4 h-4" />
-                                </button>
-                            </div>
+                            <button
+                                key={index}
+                                onClick={() => {
+                                    if (item === 'About Us') {
+                                        setShowAboutUsModal(true);
+                                    } else if (item === 'Why Use AI') {
+                                        setShowWhyUseAIModal(true);
+                                    } else if (item === 'Products and Services') {
+                                        setShowProductsModal(true);
+                                    } else if (item === 'Partner Program') {
+                                        setShowPartnerProgramModal(true);
+                                    }
+                                    setIsMenuOpen(false);
+                                }}
+                                className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-100"
+                            >
+                                {item}
+                            </button>
                         ))}
                     </div>
                 )}
@@ -255,7 +288,7 @@ const Website = () => {
                                     </span>
                                 </h1>
                                 <h2 className="text-4xl font-semibold text-white mb-4">
-                                    Custom Software Solutions
+                                    AI-Augmented Custom Software
                                 </h2>
                             </div>
 
@@ -300,7 +333,7 @@ const Website = () => {
                     </div>
                 </section>
 
-                {/* Remaining sections with black background and adjusted text colors */}
+                {/* Images Section */}
                 <div className='w-full flex flex-row justify-center items-center space-x-4 py-8 bg-black'>
                     <img
                         src={stressedImage}
@@ -312,14 +345,9 @@ const Website = () => {
                         alt="Napkin Image 2"
                         className="w-1/4 object-contain"
                     />
-                    {/* <img
-                        src={napkinImage3}
-                        alt="Napkin Image 3"
-                        className="w-[400px] h-[300px] object-contain"
-                    /> */}
                     <img
-                        src={napkinImage5}
-                        alt="Napkin Image 5"
+                        src={solution}
+                        alt="Solution Image"
                         className="w-[400px] h-[450px] object-contain"
                     />
                 </div>
@@ -329,7 +357,6 @@ const Website = () => {
                     <div className="w-full px-4">
                         <h2 className="text-3xl font-bold text-center mb-16 text-white">Our Approach</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-                            {/* Approach cards with black background and white/gray text */}
                             <div className="text-center p-8 rounded-xl bg-gray-900 hover:bg-gray-800 transition-colors">
                                 <div className="bg-gray-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <BarChart className="w-8 h-8 text-white" />
